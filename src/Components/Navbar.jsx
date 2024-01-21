@@ -30,7 +30,8 @@ const Navbar = () => {
                     </TabPanels>
                 </Tabs>
             </Box>
-                <Profile/>
+                {/* <Box><Profile /></Box> */}
+
 
             </HStack>
 
