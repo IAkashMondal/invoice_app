@@ -9,6 +9,8 @@ import { TbTextPlus } from "react-icons/tb";
 import { RxCross2 } from "react-icons/rx";
 import { FaPercentage } from "react-icons/fa";
 import StateSearch from './StateCode';
+import { convertToWords } from '../Functions/ConverToWords';
+
 export const InputForm = () => {
     const initialValues = {
         companyName: 'RAICHANGA MINERALS & LOGISTICS LLP',
@@ -24,6 +26,8 @@ export const InputForm = () => {
         cgst: '2.5',
     };
     const CurrentDate = GetCurrentDate();
+
+
     const [name, setName] = useState('');
     const [rate, setRate] = useState('400');
     const [ratePaise, setRatePaise] = useState('00');
@@ -105,15 +109,16 @@ export const InputForm = () => {
     let grossTotal = newbill + cgst + sgst
 
     let netTotal = grossTotal + parseFloat(adjustment) || grossTotal;
-
+    const convertToWordsResult = convertToWords(netTotal);
+    const convertGStToWordsResult = convertToWords(sgst + cgst);
     return (
         <VStack spacing={4} align="stretch" p={4} w={'50%'}>
-            <HStack>
-                <Text>Invoice No:</Text><Text>RML/23-34/712</Text>
-                <Text>Date:</Text><Text>{CurrentDate}</Text>
+            <HStack f>
+                <Text ontFamily="Arial, sans-serif" size={"9px"}>Invoice No:</Text><Text ontFamily="ArialMT, sans-serif" size={"11px"} fontWeight="bold">RML/23-34/712</Text>
+                <Text >Date:</Text><Text>{CurrentDate}</Text>
             </HStack>
             < >
-                <HStack px={20}>
+                <HStack px={20} fontFamily="Arial, sans-serif">
                     <FormControl>
                         <FormLabel>Name</FormLabel>
                         <InputGroup value={name} onChange={handleNameChange}>
@@ -191,11 +196,10 @@ export const InputForm = () => {
 
             </>
             <FormControl>
-                <TableContainer>
+                <TableContainer boxShadow='dark-lg' p='6' rounded='md' bg='tranparent'>
                     <Table variant='striped' colorScheme='teal'>
-                        <TableCaption>Imperial to metric conversion factors</TableCaption>
                         <Thead>
-                            <Tr justifyContent={'space-between'}>
+                            <Tr justifyContent={'space-between'} bg={'#003049'}>
                                 <Th>COST</Th>
                                 <Th>CGST</Th>
                                 <Th>SGST</Th>
@@ -204,6 +208,9 @@ export const InputForm = () => {
                                 <Th>ADJUST</Th>
                                 <Th isNumeric>NET TOTAL</Th>
                             </Tr>
+                            <Tbody>
+
+                            </Tbody>
                         </Thead>
                         <Tbody>
                             <Tr justifyContent={'space-between'}>
@@ -215,7 +222,23 @@ export const InputForm = () => {
                                 <Td>{adjustment ? parseFloat(adjustment) : ''}</Td>
                                 <Td>{netTotal}</Td>
                             </Tr>
+
                         </Tbody>
+                        <Tfoot>
+
+                        </Tfoot>
+                    </Table>
+                    <Table variant='striped' colorScheme='teal'>
+                        <Thead>
+                            <Tr justifyContent={'space-around'}  >
+                                <Td fontWeight={"bold"}>GST TOTAL</Td>
+                                <Td>{convertGStToWordsResult}</Td>
+                            </Tr>
+                            <Tr justifyContent={'space-around'} bg={"teal.700"} >
+                                <Td fontWeight={"bold"}>NET TOTAL</Td>
+                                <Td>{convertToWordsResult}</Td>
+                            </Tr>
+                        </Thead>
                     </Table>
                 </TableContainer>
                 <FormLabel>ADDRESS</FormLabel>
