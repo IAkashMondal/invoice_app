@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     Box, FormControl, FormLabel, Input, Button, VStack, HStack, PinInput, PinInputField, Radio, RadioGroup, InputRightAddon, Table,
-    TableCaption, TableContainer, Tr, Tbody, Th, Tfoot, Text, InputGroup, InputRightElement, Td, Thead
+    TableCaption, TableContainer, Tr, Tbody, Th, Tfoot, Text, InputGroup, InputRightElement, InputLeftElement, Td, Thead
 } from '@chakra-ui/react';
 import { PiCurrencyInrBold } from 'react-icons/pi';
 import { GetCurrentDate } from '../Functions/Date';
 import { TbTextPlus } from "react-icons/tb";
 import { RxCross2 } from "react-icons/rx";
-import { AiOutlinePercentage } from "react-icons/ai";
+import { FaPercentage } from "react-icons/fa";
+import StateSearch from './StateCode';
 export const InputForm = () => {
     const initialValues = {
         companyName: 'RAICHANGA MINERALS & LOGISTICS LLP',
@@ -28,16 +29,35 @@ export const InputForm = () => {
     const [ratePaise, setRatePaise] = useState('00');
     const [weight, setWeight] = useState('');
     const [weightKg, setWeightKg] = useState('');
+    const [adjustment, setAdjustment] = useState();
     const [iseditable, setIsEditable] = useState(false);
+    const ratePaiseInputRef = useRef(null);
     const [selectedOptions, setSelectedOptions] = useState(['stone-dust']);
     const [companyInfo, setCompanyInfo] = useState(initialValues);
+    const handleAdjustmentChange = (value) => {
+        setAdjustment(value);
+    }
     const handleCompanyInfoChange = (field, value) => {
         setCompanyInfo(prevState => ({
             ...prevState,
             [field]: value,
         }));
     };
+    const handleRateFocusChange = (value) => {
+        setRate(value);
 
+        // Check if the rate field is filled and move focus to ratePaise field
+        if (value.length === 3) {
+            ratePaiseInputRef.current && ratePaiseInputRef.current.focus();
+        }
+    };
+    const handleKeyPress = (event) => {
+        // Check if the pressed key is Enter (key code 13)
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission (if applicable)
+            ratePaiseInputRef.current && ratePaiseInputRef.current.focus();
+        }
+    };
 
     const handeleditablechange = () => {
         setIsEditable(!iseditable);
@@ -72,6 +92,7 @@ export const InputForm = () => {
 
         console.log('Saved Company Info:', companyInfo)
         // Handle form submission logic here
+        setAdjustment()
     };
     //callculation------------------------------------------------------------------------>
     let cost = ((weight, weightKg, rate, ratePaise) => {
@@ -82,8 +103,8 @@ export const InputForm = () => {
     let cgst = newbill * 2.5 / 100;
     let sgst = newbill * 2.5 / 100;
     let grossTotal = newbill + cgst + sgst
-    let Adjust = -10;
-    let netTotal = grossTotal - 10;
+
+    let netTotal = grossTotal + parseFloat(adjustment) || grossTotal;
 
     return (
         <VStack spacing={4} align="stretch" p={4} w={'50%'}>
@@ -145,7 +166,8 @@ export const InputForm = () => {
                         <FormLabel>RATE</FormLabel>
                         <HStack>
                             <Box ml={-15}> <PiCurrencyInrBold /></Box>
-                            <PinInput otp value={rate} onChange={(value) => handleRateChange(value)}>
+                            <PinInput otp value={rate} onChange={(value) => handleRateChange(value)}
+                                onkeydown={handleRateFocusChange} ref={ratePaiseInputRef} >
                                 <PinInputField />
                                 <PinInputField />
                                 <PinInputField />
@@ -155,9 +177,18 @@ export const InputForm = () => {
                                 <PinInputField />
                                 <PinInputField />
                             </PinInput>
+                            <FormControl>
+                                <Input
+                                    type="number"
+                                    placeholder="Enter Adjustment"
+                                    value={adjustment}
+                                    onChange={(e) => handleAdjustmentChange(e.target.value)}
+                                />
+                            </FormControl>
                         </HStack>
                     </FormControl>
                 </HStack>
+
             </>
             <FormControl>
                 <TableContainer>
@@ -168,6 +199,7 @@ export const InputForm = () => {
                                 <Th>COST</Th>
                                 <Th>CGST</Th>
                                 <Th>SGST</Th>
+                                <Th>GST</Th>
                                 <Th>GROSS TOTAL</Th>
                                 <Th>ADJUST</Th>
                                 <Th isNumeric>NET TOTAL</Th>
@@ -178,8 +210,9 @@ export const InputForm = () => {
                                 <Td>{cost(weight, weightKg, rate, ratePaise)}</Td>
                                 <Td>{cgst} </Td>
                                 <Td isNumeric>{sgst}</Td>
+                                <Td>{sgst + cgst}</Td>
                                 <Td>{grossTotal}</Td>
-                                <Td>{Adjust}</Td>
+                                <Td>{adjustment ? parseFloat(adjustment) : ''}</Td>
                                 <Td>{netTotal}</Td>
                             </Tr>
                         </Tbody>
@@ -188,6 +221,8 @@ export const InputForm = () => {
                 <FormLabel>ADDRESS</FormLabel>
                 <Input type="address" placeholder="Enter Address" />
             </FormControl>
+            <StateSearch />
+            {/* Aditional dtata----------- */}
             <Button onClick={handeleditablechange} color='white' size={'lg'} bg={"#76E4F7"} rightIcon={<TbTextPlus />}><Text as='b'>Edit Constan Items</Text></Button>
             {iseditable ?
                 <VStack spacing={4} align="stretch" p={4} w={'70%'} textAlign={'center'}>
@@ -226,8 +261,8 @@ export const InputForm = () => {
                                     onChange={(e) => handleCompanyInfoChange('gst', e.target.value)}
                                     textAlign="center"
                                 />
-                                <InputRightAddon>
-                                    <AiOutlinePercentage />
+                                <InputRightAddon size="6rem" color="teal.200">
+                                    <FaPercentage />
                                 </InputRightAddon>
                             </InputGroup>
                         </FormControl>
@@ -239,8 +274,8 @@ export const InputForm = () => {
                                     onChange={(e) => handleCompanyInfoChange('cgst', e.target.value)}
                                     textAlign="center"
                                 />
-                                <InputRightAddon>
-                                    <AiOutlinePercentage />
+                                <InputRightAddon size="6rem" color="teal.200">
+                                    <FaPercentage />
                                 </InputRightAddon>
                             </InputGroup>
                         </FormControl>
@@ -252,8 +287,8 @@ export const InputForm = () => {
                                     onChange={(e) => handleCompanyInfoChange('sgst', e.target.value)}
                                     textAlign="center"
                                 />
-                                <InputRightAddon>
-                                    <AiOutlinePercentage />
+                                <InputRightAddon size="6rem" color="teal.200">
+                                    <FaPercentage />
                                 </InputRightAddon>
                             </InputGroup>
                         </FormControl>

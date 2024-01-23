@@ -3,6 +3,10 @@ import { Box, Tabs, TabList, Tab, TabPanel, TabPanels, HStack } from '@chakra-ui
 import { GstBill } from '../Page/GsyBill'
 import OrderHistory from '../Page/OrderHistory'
 import Profile from './Profile'
+import InvoiceBuilder from './InvoiceBuilder'
+import { MainFrom } from '../test/MainFrom'
+
+
 const Navbar = () => {
     return (
         <Box w='100%' color='white'>
@@ -10,7 +14,7 @@ const Navbar = () => {
                 <Tabs isFitted variant='enclosed' p={0} mt={4}>
                     <TabList >
                         <Tab _selected={{ color: 'white', bg: '#012a4a' }}>GST Bill</Tab>
-                        <Tab _selected={{ color: '#014f86', bg: 'black' }}>Two</Tab>
+                        <Tab _selected={{ color: '#014f86', bg: 'black' }}>ORDER HISTORY</Tab>
                         <Tab _selected={{ color: '#89c2d9', bg: 'black' }}>There</Tab>
 
                     </TabList>
@@ -22,7 +26,7 @@ const Navbar = () => {
                             <OrderHistory />
                         </TabPanel>
                         <TabPanel>
-                            <p>t3!</p>
+                            <MainFrom/>
                         </TabPanel>
                         <TabPanel>
                             <Profile />

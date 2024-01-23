@@ -1,0 +1,243 @@
+{
+  "companyDetails": {
+    "InvoiceNo": "RML/23-24/725",
+    "Date": "",
+    "BuyerName": "A B",
+    "TruckNumber": "wb-a-1234",
+    "Quantity": "24.50",
+    "Rate": "400.00",
+    "BuyerAddress": "Siliguri More, Raiganj",
+    "BuyerDistrict": "North Dinajpur",
+    "BuyerState": "West Bengal",
+    "ContactBuyer": "+91 961412081",
+    "TypeOfGoods": "dust",
+    "GstPercentage": "5",
+    "SGstPercentage": "2.5",
+    "CgstPercentage": "2.5",
+    "Adjusted": "-10",
+    "NetTotal": "9500",
+    "TotalInRupees": "xxxx",
+    "TotalInWords": "Ten Thousand",
+    "TotalGst": "500",
+    "TotalSgst": "250",
+    "TotalCgst": "250",
+    "TotalGstInWords": "Five Hundred",
+    "CompanyName": "RAICHANGA MINERALS & LOGISTICS LLP",
+    "CompanyAddress": "MANABARI, ODLABARI",
+    "CompanyDistrict": "JALPAIGURI",
+    "GSTIN/UIN": "19AAVFR2155G1ZR",
+    "StateName": "State Name: West Bengal",
+    "CompanyGstCode": "19",
+    "CompanyContact": "+91 6294065691",
+    "EMail": "raichangamineralslogisticsllp@gmail.com"
+  },
+  "gstStates": {
+    "Andhra Pradesh": {
+      "state": "Andhra Pradesh",
+      "gstCode": 37
+    },
+    "Arunachal Pradesh": {
+      "state": "Arunachal Pradesh",
+      "gstCode": 12
+    },
+    "Assam": {
+      "state": "Assam",
+      "gstCode": 18
+    },
+    "Bihar": {
+      "state": "Bihar",
+      "gstCode": 10
+    },
+    "Chhattisgarh": {
+      "state": "Chhattisgarh",
+      "gstCode": 22
+    },
+    "Goa": {
+      "state": "Goa",
+      "gstCode": 30
+    },
+    "Gujarat": {
+      "state": "Gujarat",
+      "gstCode": 24
+    },
+    "Haryana": {
+      "state": "Haryana",
+      "gstCode": 6
+    },
+    "Himachal Pradesh": {
+      "state": "Himachal Pradesh",
+      "gstCode": 2
+    },
+    "Jharkhand": {
+      "state": "Jharkhand",
+      "gstCode": 20
+    },
+    "Karnataka": {
+      "state": "Karnataka",
+      "gstCode": 29
+    },
+    "Kerala": {
+      "state": "Kerala",
+      "gstCode": 32
+    },
+    "Madhya Pradesh": {
+      "state": "Madhya Pradesh",
+      "gstCode": 23
+    },
+    "Maharashtra": {
+      "state": "Maharashtra",
+      "gstCode": 27
+    },
+    "Manipur": {
+      "state": "Manipur",
+      "gstCode": 14
+    },
+    "Meghalaya": {
+      "state": "Meghalaya",
+      "gstCode": 17
+    },
+    "Mizoram": {
+      "state": "Mizoram",
+      "gstCode": 15
+    },
+    "Nagaland": {
+      "state": "Nagaland",
+      "gstCode": 13
+    },
+    "Odisha": {
+      "state": "Odisha",
+      "gstCode": 21
+    },
+    "Punjab": {
+      "state": "Punjab",
+      "gstCode": 3
+    },
+    "Rajasthan": {
+      "state": "Rajasthan",
+      "gstCode": 8
+    },
+    "Sikkim": {
+      "state": "Sikkim",
+      "gstCode": 11
+    },
+    "Tamil Nadu": {
+      "state": "Tamil Nadu",
+      "gstCode": 33
+    },
+    "Telangana": {
+      "state": "Telangana",
+      "gstCode": 36
+    },
+    "Tripura": {
+      "state": "Tripura",
+      "gstCode": 16
+    },
+    "Uttar Pradesh": {
+      "state": "Uttar Pradesh",
+      "gstCode": 9
+    },
+    "Uttarakhand": {
+      "state": "Uttarakhand",
+      "gstCode": 5
+    },
+    "West Bengal": {
+      "state": "West Bengal",
+      "gstCode": 19
+    }
+  },
+  "items": [
+    {
+      "name": "a",
+      "price": "20.50",
+      "id": 1
+    },
+    {
+      "name": "b",
+      "price": "70",
+      "id": 2
+    }
+  ],
+  "Invoicedata": [
+    {
+      "customerName": "Akash mondal",
+      "invoiceNumber": "rml/23-24/758",
+      "items": [
+        {
+          "itemName": "a",
+          "quantity": 1,
+          "price": "10"
+        },
+        {
+          "itemName": "b",
+          "quantity": "20",
+          "price": "20"
+        },
+        {
+          "itemName": "c",
+          "quantity": "15",
+          "price": "100"
+        },
+        {
+          "itemName": "",
+          "quantity": 1,
+          "price": 0
+        }
+      ],
+      "totalAmount": 0,
+      "id": 1
+    }
+  ],
+  "invoiceofcomapny": [
+    {
+      "name": "nigga ltd",
+      "number": "+91 91234567890",
+      "address": "niggapu",
+      "state": "",
+      "district": "",
+      "code": "",
+      "quantity": "",
+      "companyname": "nigga supplyer",
+      "Companyaddress": "Slg, chapri",
+      "contac": "+91 911",
+      "id": 1
+    },
+    {
+      "name": "ram ji",
+      "number": "108",
+      "address": "ayodh",
+      "state": "",
+      "district": "",
+      "code": "",
+      "quantity": "",
+      "companyname": "Abc Ltd",
+      "Companyaddress": "Slg, Delhi",
+      "contac": "+91 1800 5454 1800",
+      "id": 2
+    },
+    {
+      "name": "ravan ",
+      "number": "666",
+      "address": "srilank",
+      "state": "",
+      "district": "",
+      "code": "",
+      "quantity": "",
+      "companyname": "Abc Ltd",
+      "Companyaddress": "7 samundar par",
+      "contac": "+91 911",
+      "id": 3
+    }
+  ],
+  "initialdata": {
+    "name": "",
+    "number": "",
+    "address": "",
+    "state": "",
+    "district": "",
+    "code": "",
+    "quanitiy": "",
+    "companyname": "Abc Ltd",
+    "Companyaddress": "Slg,Delhi",
+    "contact": "+91 1800 5454 1800"
+  }
+}
