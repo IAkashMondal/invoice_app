@@ -1,0 +1,379 @@
+.Outter-layer {
+  color: black;
+  max-width: 8.27in;
+  max-height: 11.69in;
+  background-color: rgb(255, 255, 255);
+  box-shadow: "5px";
+}
+.Tax-Invoice {
+  text-align: center;
+  margin-bottom: -20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.Main-Frame {
+  border: 1px solid black;
+  max-width: 17.2cm;
+  height: 22.6cm;
+  margin-left: 2cm;
+  margin-top: 1.7cm;
+  margin-bottom: 5cm;
+}
+.Box-1 {
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 9.4cm;
+  height: 7.6cm;
+}
+.Box-2 {
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid black;
+  width: 7.9cm;
+  height: 7.6cm;
+}
+.Box-1-Child-1 {
+  width: 9.1cm;
+  height: 2.8cm;
+}
+.Box-1-Child-2 {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  width: 9.1cm;
+  height: 1.7cm;
+}
+.Box-1-Child-3 {
+  width: 9.1cm;
+  height: 3.1cm;
+}
+.Box-2-A {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  height: 0.7cm;
+  width: 3.7cm;
+}
+.Box-2-B {
+  border-bottom: 1px solid black;
+  height: 0.7cm;
+  width: 4.1cm;
+}
+.SlNo {
+  width: 0.6cm;
+  height: 0.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 7pt;
+  font-family: "Arial MT", sans-serif;
+  white-space: pre-line;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Description {
+  width: 6.6cm;
+  height: 0.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 8px;
+  font-family: "Arial MT", sans-serif;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.H-Q-R {
+  width: 1.7cm;
+  height: 0.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Gst {
+  width: 1.2cm;
+  height: 0.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  white-space: pre-line;
+  font-family: "Arial MT", sans-serif;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Per {
+  width: 0.8cm;
+  height: 0.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Amt {
+  width: 2.7cm;
+  height: 0.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.SlNo-OutPut {
+  width: 0.59cm;
+  height: 7.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  font-size: 7pt;
+  font-family: "Arial MT", sans-serif;
+  white-space: pre-line;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Description_OutPut {
+  width: 6.59cm;
+  height: 7.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 8px;
+  font-family: "Arial MT", sans-serif;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.H-Q-R-OutPut {
+  width: 1.69cm;
+  height: 7.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Gst-OutPut {
+  width: 1.21cm;
+  height: 7.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  white-space: pre-line;
+  font-family: "Arial MT", sans-serif;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Per-OutPut {
+  width: 0.8cm;
+  height: 7.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Amt-OutPut {
+  width: 2.7cm;
+  height: 7.9cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.SlNo-OutPut-Total {
+  width: 0.59cm;
+  height: 0.5cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  font-size: 7pt;
+  font-family: "Arial MT", sans-serif;
+  white-space: pre-line;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Description_OutPut-Total {
+  width: 6.59cm;
+  height: 0.5cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 8px;
+  font-family: "Arial MT", sans-serif;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.H-Q-R-OutPut-Total {
+  width: 1.69cm;
+  height: 0.5cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Gst-OutPut-Total {
+  width: 1.21cm;
+  height: 0.5cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  white-space: pre-line;
+  font-family: "Arial MT", sans-serif;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Per-OutPut-Total {
+  width: 0.8cm;
+  height: 0.5cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Amt-OutPut-Total {
+  width: 2.7cm;
+  height: 0.5cm;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid black;
+  font-size: 6pt;
+  font-family: "Arial MT", sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center;
+}
+.Total_words {
+  width: 16.99cm;
+  height: 0.9cm;
+}
+.Taxable-Box {
+  width: 17cm;
+  height: 0.8cm;
+  padding: 0px;
+  margin: 0px;
+  border-top: 1px solid black;
+}
+.Taxable-Box-1 {
+  width: 6.7cm;
+  height: 0.8cm;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  box-sizing: border-box;
+}
+.Taxable-Box-2 {
+  width: 2cm;
+  height: 0.8cm;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.Taxable-Box-3 {
+  width: 3.3cm;
+  height: 0.8cm;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.Taxable-Box-5 {
+  width: 2.1cm;
+  height: 0.8cm;
+  border-bottom: 1px solid black;
+}
+.Taxable-Box-1A {
+  width: 6.7cm;
+  max-width: 6.55cm;
+  height: 0.3cm;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.Taxable-Box-1B {
+  width: 6.55cm;
+  margin: 0px;
+  padding: 0px;
+  height: 0.4cm;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.Cgst-Box{
+    width: 3.3cm;
+    height: 0.4cm;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    font-size: 8pt;
+    font-family: "Arial MT", sans-serif;
+}
+.Cgst-Box-Rate{
+    width: 1.3cm;
+    height: 0.4cm;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.Cgst-Box-Amt{
+    width: 2cm;
+    height: 0.4cm;
+    border-bottom: 1px solid black;
+}

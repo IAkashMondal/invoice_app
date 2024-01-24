@@ -76,12 +76,12 @@ export const convertToWords = (value) => {
     return result.join(" ");
   }
 
-  const [rupees, paise] = value.toString().split(".");
+  const [rupees, paise] = value.toFixed(2).toString().split(".");
   const rupeesInWords = convertGroupToWords(rupees, false);
   const paiseInWords = paise ? convertGroupToWords(paise, true) + " Paise" : "";
 
   const finalString =
-    paiseInWords.length > 0.1
+    Number(paiseInWords).toFixed(2).length > 0.1
       ? `${rupeesInWords} Rupees and ${paiseInWords} only`
       : `${rupeesInWords} Rupees Only`;
 

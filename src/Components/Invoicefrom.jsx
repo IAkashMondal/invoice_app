@@ -6,7 +6,6 @@ const InvoiceForm = ({ onAddItem }) => {
     const [itemName, setItemName] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [price, setPrice] = useState(0);
-
     const handleAddItem = () => {
         // Validate input fields
         if (!itemName || quantity <= 0 || price < 0) {

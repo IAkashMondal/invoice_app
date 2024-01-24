@@ -1,23 +1,39 @@
 // InvoicePreview.js
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { VStack, Text, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
 
-const InvoicePreview = ({ invoiceData }) => {
+const InvoicePreview = ({ items, totalAmount }) => {
     return (
-        <Box p={4} border="1px solid gray">
+        <VStack spacing={4}>
             <Text fontSize="xl">Invoice Preview</Text>
-            {/* Display customer details */}
-            {/* ... (customer name, invoice number, etc.) */}
-            <Text>Items:</Text>
-            <ul>
-                {invoiceData.items.map((item, index) => (
-                    <li key={index}>
-                        {item.itemName} x {item.quantity} - ${item.price}
-                    </li>
-                ))}
-            </ul>
-            <Text>Total Amount: ${invoiceData.totalAmount}</Text>
-        </Box>
+            <Table variant="simple">
+                <Thead>
+                    <Tr>
+                        <Th>Product Name</Th>
+                        <Th>Serial Number</Th>
+                        <Th>Item Name</Th>
+                        <Th>Quantity</Th>
+                        <Th>Units</Th>
+                        <Th>Price</Th>
+                        <Th>Total</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    {items.map((item, index) => (
+                        <Tr key={index}>
+                            <Td>{item.productName}</Td>
+                            <Td>{item.serialNumber}</Td>
+                            <Td>{item.itemName}</Td>
+                            <Td>{item.quantity}</Td>
+                            <Td>{item.units}</Td>
+                            <Td>${item.price}</Td>
+                            <Td>${item.quantity * item.price}</Td>
+                        </Tr>
+                    ))}
+                </Tbody>
+            </Table>
+            <Text>Total Amount: ${totalAmount}</Text>
+        </VStack>
     );
 };
 

@@ -10,6 +10,8 @@ import { RxCross2 } from "react-icons/rx";
 import { FaPercentage } from "react-icons/fa";
 import StateSearch from './StateCode';
 import { convertToWords } from '../Functions/ConverToWords';
+import { formatCurrency } from '../Functions/IntNumber';
+
 
 export const InputForm = () => {
     const initialValues = {
@@ -107,10 +109,16 @@ export const InputForm = () => {
     let cgst = newbill * 2.5 / 100;
     let sgst = newbill * 2.5 / 100;
     let grossTotal = newbill + cgst + sgst
-
+  
     let netTotal = grossTotal + parseFloat(adjustment) || grossTotal;
     const convertToWordsResult = convertToWords(netTotal);
     const convertGStToWordsResult = convertToWords(sgst + cgst);
+    const FormattedCost = formatCurrency(newbill);
+    const FormattedNetTotal = formatCurrency(netTotal)
+    const FomatedGrossTotal = formatCurrency(grossTotal)
+    const FormattedGst = formatCurrency(sgst + cgst)
+    const FormattedSGst = formatCurrency(sgst)
+    const FormattedCGst = formatCurrency(cgst)
     return (
         <VStack spacing={4} align="stretch" p={4} w={'50%'}>
             <HStack f>
@@ -214,13 +222,13 @@ export const InputForm = () => {
                         </Thead>
                         <Tbody>
                             <Tr justifyContent={'space-between'}>
-                                <Td>{cost(weight, weightKg, rate, ratePaise)}</Td>
-                                <Td>{cgst} </Td>
-                                <Td isNumeric>{sgst}</Td>
-                                <Td>{sgst + cgst}</Td>
-                                <Td>{grossTotal}</Td>
+                                <Td>{FormattedCost}</Td>
+                                <Td>{FormattedCGst} </Td>
+                                <Td isNumeric>{FormattedSGst}</Td>
+                                <Td>{FormattedGst}</Td>
+                                <Td>{FomatedGrossTotal}</Td>
                                 <Td>{adjustment ? parseFloat(adjustment) : ''}</Td>
-                                <Td>{netTotal}</Td>
+                                <Td>{FormattedNetTotal}</Td>
                             </Tr>
 
                         </Tbody>

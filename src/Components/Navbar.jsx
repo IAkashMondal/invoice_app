@@ -5,6 +5,7 @@ import OrderHistory from '../Page/OrderHistory'
 import Profile from './Profile'
 import InvoiceBuilder from './InvoiceBuilder'
 import { MainFrom } from '../test/MainFrom'
+import BillTemplate from './BillTemplate'
 
 
 const Navbar = () => {
@@ -24,6 +25,7 @@ const Navbar = () => {
                         </TabPanel >
                         <TabPanel _active={{ color: '#89c2d9', }} p={0} m={0}>
                             <OrderHistory />
+                            <BillTemplate/>
                         </TabPanel>
                         <TabPanel>
                             <MainFrom/>

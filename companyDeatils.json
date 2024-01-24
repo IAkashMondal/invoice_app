@@ -185,6 +185,26 @@
       ],
       "totalAmount": 0,
       "id": 1
+    },
+    {
+      "customerName": "text-1",
+      "invoiceNumber": "24/30/40",
+      "items": [
+        {
+          "itemName": "chicken",
+          "quantity": "3",
+          "price": "300",
+          "units": "kg"
+        },
+        {
+          "itemName": "",
+          "quantity": 1,
+          "price": 0,
+          "units": 1
+        }
+      ],
+      "totalAmount": 0,
+      "id": 2
     }
   ],
   "invoiceofcomapny": [
