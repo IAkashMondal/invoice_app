@@ -1,5 +1,5 @@
 import React from 'react'
-import { HStack, Text, VStack, Box } from "@chakra-ui/react";
+import { HStack, Text, VStack, Box, Grid, GridItem } from "@chakra-ui/react";
 import "../css/style.css"
 const Decription = () => {
     return (
@@ -100,8 +100,7 @@ const Decription = () => {
             <Box className='Taxable-Box' >
                 <HStack gap={0} spacing={0} p={0} m={0}>
                     <VStack className='Taxable-Box-1'>
-
-
+                        <Text>uhsdrtuiwh4ifrth</Text>
                     </VStack>
                     <VStack className='Taxable-Box-2'>
 
@@ -134,24 +133,17 @@ const Decription = () => {
                 </HStack>
 
             </Box>
-            <Box p={0} m={0} gap={0}>
-                <VStack gap={0} p={0} m={0} justify={""}>
-                    <Box className='Taxable-Box-1A'>
+            <Box style={{
+                boxSizing: "border-box"
+            }}>
+                <Grid gap={0} spacing={0} p={0} m={0}>
+                    <GridItem className='Taxable-Box-1A'></GridItem>
+                    <GridItem className='Taxable-Box-1B'></GridItem>
+                </Grid>
 
-                    </Box>
-                    <Box className='Taxable-Box-1B'>
-
-                    </Box>
-                </VStack>
-                <VStack gap={0} p={0} m={0} justify={""}>
-                    <Box className='Taxable-Box-1A'>
-
-                    </Box>
-                    <Box className='Taxable-Box-1B'>
-
-                    </Box>
-                </VStack>
-            </Box>
+            </Box >
+            <Box className='Taxable-Box-1'></Box>
+            <Box className='Taxable-Box-1A'></Box>
         </Box>
     )
 }

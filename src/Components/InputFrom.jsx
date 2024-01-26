@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {
     Box, FormControl, FormLabel, Input, Button, VStack, HStack, PinInput, PinInputField, Radio, RadioGroup, InputRightAddon, Table,
-    TableCaption, TableContainer, Tr, Tbody, Th, Tfoot, Text, InputGroup, InputRightElement, InputLeftElement, Td, Thead
+    TableContainer, Tr, Tbody, Th, Tfoot, Text, InputGroup, InputRightElement, Td, Thead, Center
 } from '@chakra-ui/react';
 import { PiCurrencyInrBold } from 'react-icons/pi';
 import { GetCurrentDate } from '../Functions/Date';
@@ -11,7 +11,7 @@ import { FaPercentage } from "react-icons/fa";
 import StateSearch from './StateCode';
 import { convertToWords } from '../Functions/ConverToWords';
 import { formatCurrency } from '../Functions/IntNumber';
-
+import { downloadPdfAndSendData, downloadWordFile } from './Buttons/GenaratePdfWord'; 
 
 export const InputForm = () => {
     const initialValues = {
@@ -29,7 +29,7 @@ export const InputForm = () => {
     };
     const CurrentDate = GetCurrentDate();
 
-
+    const [buttonDisabled, setButtonDisabled] = useState(false);
     const [name, setName] = useState('');
     const [rate, setRate] = useState('400');
     const [ratePaise, setRatePaise] = useState('00');
@@ -109,7 +109,7 @@ export const InputForm = () => {
     let cgst = newbill * 2.5 / 100;
     let sgst = newbill * 2.5 / 100;
     let grossTotal = newbill + cgst + sgst
-  
+
     let netTotal = grossTotal + parseFloat(adjustment) || grossTotal;
     const convertToWordsResult = convertToWords(netTotal);
     const convertGStToWordsResult = convertToWords(sgst + cgst);
@@ -331,6 +331,18 @@ export const InputForm = () => {
             <Button colorScheme="teal" type="submit" onClick={handleSubmit}>
                 Submit
             </Button>
+            <Center>
+                <Button onClick={() => downloadPdfAndSendData(initialValues, setButtonDisabled)} isDisabled={buttonDisabled}>
+                    Download PDF
+                </Button>
+            </Center>
+
+            {/* Button to download Word file */}
+            <Center>
+                <Button onClick={() => downloadWordFile(setButtonDisabled)} isDisabled={buttonDisabled}>
+                    Download Word
+                </Button>
+            </Center>
         </VStack>
     );
 };

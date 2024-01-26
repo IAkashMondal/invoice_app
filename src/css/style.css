@@ -322,7 +322,6 @@
   height: 0.8cm;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
-  box-sizing: border-box;
 }
 .Taxable-Box-2 {
   width: 2cm;
@@ -341,39 +340,37 @@
   height: 0.8cm;
   border-bottom: 1px solid black;
 }
+
+.Cgst-Box {
+  width: 3.3cm;
+  height: 0.4cm;
+  border-bottom: 1px solid black;
+  font-size: 8pt;
+  font-family: "Arial MT", sans-serif;
+}
+.Cgst-Box-Rate {
+  width: 1.3cm;
+  height: 0.4cm;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.Cgst-Box-Amt {
+  width: 2cm;
+  height: 0.4cm;
+  border-bottom: 1px solid black;
+}
+
 .Taxable-Box-1A {
-  width: 6.7cm;
-  max-width: 6.55cm;
+  width: 6.45cm;
   height: 0.3cm;
-  margin: 0px;
-  padding: 0px;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
 .Taxable-Box-1B {
-  width: 6.55cm;
+  width: 6.45cm;
   margin: 0px;
   padding: 0px;
   height: 0.4cm;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
-}
-.Cgst-Box{
-    width: 3.3cm;
-    height: 0.4cm;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    font-size: 8pt;
-    font-family: "Arial MT", sans-serif;
-}
-.Cgst-Box-Rate{
-    width: 1.3cm;
-    height: 0.4cm;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-}
-.Cgst-Box-Amt{
-    width: 2cm;
-    height: 0.4cm;
-    border-bottom: 1px solid black;
 }
