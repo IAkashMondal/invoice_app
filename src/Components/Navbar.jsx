@@ -6,6 +6,7 @@ import Profile from './Profile'
 import InvoiceBuilder from './InvoiceBuilder'
 import { MainFrom } from '../test/MainFrom'
 import BillTemplate from './BillTemplate'
+import InvoiceTemplate from '../test/InvoiceTemplate'
 
 
 const Navbar = () => {
@@ -28,10 +29,11 @@ const Navbar = () => {
                             <BillTemplate/>
                         </TabPanel>
                         <TabPanel>
+                            <InvoiceTemplate />
                             <MainFrom/>
                         </TabPanel>
                         <TabPanel>
-                            <Profile />
+                            
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
